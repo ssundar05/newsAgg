@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
 /**
  * COMPONENT
  */
-export const UserHome = (props) => {
+export const politicsSelect = (props) => {
   const {email} = props
 
   return (

@@ -11,23 +11,26 @@ import {logout} from '../store'
  *  rendered out by the component's `children`.
  */
 const Main = (props) => {
-  const {children, handleClick, isLoggedIn} = props
+  const {children, handleClick, isLoggedIn, email} = props
 
   return (
     <div>
-      <h1>BOILERMAKER</h1>
       <nav>
         {
           isLoggedIn
-            ? <div>
-              {/* The navbar will show these links after you log in */}
-              <Link to="/home">Home</Link>
-              <a href="#" onClick={handleClick}>Logout</a>
+            ? <div className="nav-wrapper">
+             
+              <ul id="nav-mobile" className="right hide-on-med-and-down">
+              <li><Link to="/home">Home</Link></li>
+              <li><a href="#" onClick={handleClick}>Logout</a></li>
+              </ul>
+              <p> Welcome, {email} </p>
             </div>
-            : <div>
-              {/* The navbar will show these links before you log in */}
-              <Link to="/login">Login</Link>
-              <Link to="/signup">Sign Up</Link>
+            : <div className="nav-wrapper">
+               <ul id="nav-mobile" className="left hide-on-med-and-down">
+              <li> <Link to="/login">Login</Link></li>
+             <li> <Link to="/signup">Sign Up</Link></li>
+             </ul>
             </div>
         }
       </nav>
@@ -42,6 +45,7 @@ const Main = (props) => {
  */
 const mapState = (state) => {
   return {
+    email: state.user.email,
     isLoggedIn: !!state.user.id
   }
 }
@@ -64,5 +68,6 @@ export default withRouter(connect(mapState, mapDispatch)(Main))
 Main.propTypes = {
   children: PropTypes.object,
   handleClick: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired
+  isLoggedIn: PropTypes.bool.isRequired,
+  email: PropTypes.string
 }

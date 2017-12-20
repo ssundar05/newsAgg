@@ -4,14 +4,17 @@ import {Route, Switch, Router} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import history from './history'
 import {Main, Login, Signup, UserHome} from './components'
-import {me} from './store'
+import {me, fetchPolitics} from './store'
 
 /**
  * COMPONENT
  */
 class Routes extends Component {
+  
   componentDidMount () {
     this.props.loadInitialData()
+    // this.props.fetchInitialData()
+    
   }
 
   render () {
@@ -28,7 +31,7 @@ class Routes extends Component {
               isLoggedIn &&
                 <Switch>
                   {/* Routes placed here are only available after logging in */}
-                  <Route path="/home" component={UserHome} />
+                  <Route path="/home" component={UserHome} onEnter = {this.props.fetchInitialData()}/>
                 </Switch>
             }
             {/* Displays our Login component as a fallback */}
@@ -51,13 +54,22 @@ const mapState = (state) => {
   }
 }
 
-const mapDispatch = (dispatch) => {
-  return {
-    loadInitialData () {
-      dispatch(me())
-    }
+const mapDispatch = dispatch => ({
+  fetchInitialData: () => {
+    dispatch(fetchPolitics());
+    // what other data might we want to fetch on app load?
+  },
+  loadInitialData: () => {
+    dispatch(me());
   }
-}
+});
+// const mapDispatch = (dispatch) => {
+//   return {
+//     loadInitialData () {
+//       dispatch(me())
+//     }
+//   }
+// }
 
 export default connect(mapState, mapDispatch)(Routes)
 
