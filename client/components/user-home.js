@@ -18,6 +18,7 @@ class UserHome extends React.Component {
   }
 
   render() {
+    console.log(this.props.sources)
      const { email } = this.props.email
     return (
       <div>
@@ -44,7 +45,8 @@ class UserHome extends React.Component {
    */
   const mapState = (state) => {
     return {
-      email: state.user.email
+      email: state.user.email,
+      sources: state.sourcesSelect
     }
   }
 
