@@ -3,14 +3,19 @@ import axios from 'axios';
 /* -----------------    ACTIONS     ------------------ */
 
 const INITIALIZE = 'INITIALIZE_SELECTED_SOURCES';
+const SETPOL = 'SET_POL'
 
 const initSelectedSources  = selectedSources => ({ type: INITIALIZE, selectedSources});
+const setPol = selectedPol => ({type: SETPOL, selectedPol})
 
 export default function reducer ( selectedSources = [], action) {
     switch (action.type) {
   
       case INITIALIZE:
         return action.selectedSources;
+    
+        case SETPOL:
+            return [Object.assign({}, selectedSources[0], { politics: action.selectedPol }), selectedSources[1]];
   
       default:
         return selectedSources;
@@ -18,6 +23,17 @@ export default function reducer ( selectedSources = [], action) {
   }
 
   export const findSelectedSources = (email) => dispatch => {
+     
     axios.put('/api/selectedSources', email)
          .then(res => dispatch(initSelectedSources(res.data)));
+  };
+
+  export const setPolitics = (name) => dispatch => {
+    console.log(name)
+    axios.put('/api/selectedSources/polSelect', name)
+   
+         .then(res =>   {
+             console.log(res.data) 
+            dispatch(setPol(res.data))
+         });
   };

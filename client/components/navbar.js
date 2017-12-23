@@ -10,7 +10,7 @@ export const NavBar = (props) => {
 
   return (
       <div>
-    <nav>
+    <nav >
     <div className="nav-wrapper">
       <a href="#" className="brand-logo">Logo</a>
       <h5> Welcome, {email} </h5>
