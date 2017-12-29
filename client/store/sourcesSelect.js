@@ -29,11 +29,8 @@ export default function reducer ( selectedSources = [], action) {
   };
 
   export const setPolitics = (name) => dispatch => {
-    console.log(name)
     axios.put('/api/selectedSources/polSelect', name)
-   
          .then(res =>   {
-             console.log(res.data) 
             dispatch(setPol(res.data))
          });
   };

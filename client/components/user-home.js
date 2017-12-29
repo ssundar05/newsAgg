@@ -1,87 +1,91 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { findSelectedSources , setPolitics} from '../store'
+import { findSelectedSources, setPolitics } from '../store'
 import { Button, NavItem, Dropdown } from 'react-materialize'
-
-// import NavBar from './navbar'
-
-/**
- * COMPONENT
- */
 
 class UserHome extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { polTitle: 'Politics' }
     this.handlePolClick = this.handlePolClick.bind(this)
   }
 
   componentDidMount() {
     this.props.selectedSources(this.props.email)
+
   }
-  handlePolClick(event){
+  handlePolClick(event) {
     event.preventDefault()
-    console.log( event.target.dataset.name )
-    let pol = {politics: event.target.dataset.name }
-  
+    let pol = {
+      politics: event.target.dataset.name,
+      userId: this.props.sources.userId
+    }
     this.props.selectPol(pol)
+
     event.target.name = ''
   }
   render() {
-  
-    // const polSources = this.props.politicsSources.map(item => {
-    //   return <li key = {item.id} name = {item.name} onClick = {this.handlePolClick}>< img name = {item.name} src = {item.imgUrl} /> <p> {item.name} </p> </li>
-    // })
-    const polis = this.props.politicsSources.map(item => {
-      return <li onClick = {this.handlePolClick} key = {item.id} data-name = {item.name} >
-      < img data-name = {item.name} name = {item.name} src = {item.imgUrl}  /> <p data-name = {item.name}> {item.name} </p>
-      </li>
-    })
+    if (!this.props.sources) return <div />
     return (
       <div>
         <div className="row">
+          <div className="col s2" >
+            <Dropdown trigger={
+              <Button>Politics</Button>
+            }>
 
-          <div className="col s1.5 grey" id="sidebar">
-                <Dropdown  trigger={
-                  <Button>Politics</Button>
-                }>
-            
-                {polis}
-             
-                  {/* <NavItem><img src='https://icons.better-idea.org/icon?url=http://www.breitbart.com&size=70..120..200' /> BreitBart   </NavItem>
-                  <NavItem>two</NavItem>
-                  <NavItem divider />
-                  <NavItem>three</NavItem> */}
-                </Dropdown>
-              
+              {this.props.politicsSources.map(item => {
+                return <li onClick={this.handlePolClick} key={item.id} data-name={item.name} >
+                  < img data-name={item.name} name={item.name} src={item.imgUrl} /> <p data-name={item.name}> {item.name} </p>
+                </li>
+              })}
+            </Dropdown>
           </div>
-          <div className="col s10.5">
-            <p> HELLO </p>
-            {/* <!-- Teal page content  --> */}
+          <div className="col s10">
+            <div className="container">
+              <div className="row">
+                <div className="col s6">
+                  <div className="card">
+                    <div className="card-image waves-effect waves-block waves-light">
+                      <img className="activator" src="http://www.haworth.com/images/default-source/homepage/haworth-client-space-ash-brokerage-1.jpg?sfvrsn=2" />
+                    </div>
+                    <div className="card-content">
+                      <span className="card-title activator grey-text text-darken-4">{this.props.sources.politics.name || this.props.sources.politics}<i className="material-icons right">more_vert</i></span>
+                      <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div className="card-reveal">
+                      <span className="card-title grey-text text-darken-4">Card Title<i className="material-icons right">close</i></span>
+                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col s6">
+                  <div className="card">
+                    <div className="card-image waves-effect waves-block waves-light">
+                      <img className="activator" src="http://www.haworth.com/images/default-source/homepage/haworth-client-space-ash-brokerage-1.jpg?sfvrsn=2" />
+                    </div>
+                    <div className="card-content">
+                      <span className="card-title activator grey-text text-darken-4">Card Title<i className="material-icons right">more_vert</i></span>
+                      <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div className="card-reveal">
+                      <span className="card-title grey-text text-darken-4">Card Title<i className="material-icons right">close</i></span>
+                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                  </div>
+                </div>
+              </div></div>
           </div>
 
-        </div>
-        {/* <NavBar/> */}
-      </div>
+        </div></div>
 
 
     )
+
   }
+
 }
-// export const UserHome = (props) => {
-//   const {email} = props
-
-//   return (
-//     <div>
-//       <h5> hi </h5>
-//       {/* <NavBar/> */}
-//     </div>
-//   )
-// }
-
-/**
- * CONTAINER
- */
 const mapState = (state) => {
   return {
     email: state.user.email,
@@ -93,11 +97,12 @@ const mapState = (state) => {
 
 const mapDispatch = dispatch => ({
   selectedSources: (email) => {
-    dispatch(findSelectedSources(email))},
+    dispatch(findSelectedSources(email))
+  },
   selectPol: (name) => {
     dispatch(setPolitics(name))
   }
-    // what other data might we want to fetch on app load?
+  // what other data might we want to fetch on app load?
 });
 
 export default connect(mapState, mapDispatch)(UserHome)

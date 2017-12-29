@@ -4,27 +4,31 @@ const db = require('../db')
 
 const SourcesSelected = db.define('sourcesSelected', {
   politics: {
-    type: Sequelize.STRING,
+    type: Sequelize.JSON,
     allowNull: false,
-    defaultValue: ''
+    defaultValue: 'Politics'
   },
   sports: {
-    type: Sequelize.STRING,
+    type: Sequelize.JSON,
+   
     allowNull: false,
     defaultValue: ''
   },
   entertainment: {
-    type: Sequelize.STRING,
+    type: Sequelize.JSON,
+
     allowNull: false,
     defaultValue: ''
   },
   financial: {
-    type: Sequelize.STRING,
+    type: Sequelize.JSON,
+
     allowNull: false,
     defaultValue: ''
   },
   technology: {
-    type: Sequelize.STRING,
+    type: Sequelize.JSON,
+
     allowNull: false,
     defaultValue: ''
   },
