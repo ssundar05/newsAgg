@@ -23,7 +23,7 @@ router.put('/', function (req, res, next) {
     console.log(req.body)
     let p2 = SourcesSelected.findOne({where: {userId: req.body.userId}})
     Promise.all([p1, p2]).then(values => {
-      console.log('VSLUES', values)
+     
       res.json(values[0])
       return values[1].update({politics: values[0]})
     })
