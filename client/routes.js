@@ -4,7 +4,7 @@ import {Route, Switch, Router} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import history from './history'
 import {Main, Login, Signup, UserHome} from './components'
-import {me, fetchPolitics} from './store'
+import {me, fetchPolitics, fetchSports, fetchTechnology, fetchFinancial, fetchEntertainment} from './store'
 
 /**
  * COMPONENT
@@ -57,19 +57,16 @@ const mapState = (state) => {
 const mapDispatch = dispatch => ({
   fetchInitialData: () => {
     dispatch(fetchPolitics());
+    dispatch(fetchSports())
+    dispatch(fetchFinancial())
+    dispatch(fetchTechnology())
+    dispatch(fetchEntertainment())
     // what other data might we want to fetch on app load?
   },
   loadInitialData: () => {
     dispatch(me());
   }
 });
-// const mapDispatch = (dispatch) => {
-//   return {
-//     loadInitialData () {
-//       dispatch(me())
-//     }
-//   }
-// }
 
 export default connect(mapState, mapDispatch)(Routes)
 

@@ -12,25 +12,24 @@ const SourcesSelected = db.define('sourcesSelected', {
     type: Sequelize.JSON,
    
     allowNull: false,
-    defaultValue: ''
+    defaultValue: 'Sports'
   },
   entertainment: {
     type: Sequelize.JSON,
-
     allowNull: false,
-    defaultValue: ''
+    defaultValue: 'Entertainment'
   },
   financial: {
     type: Sequelize.JSON,
 
     allowNull: false,
-    defaultValue: ''
+    defaultValue: 'Financial'
   },
   technology: {
     type: Sequelize.JSON,
 
     allowNull: false,
-    defaultValue: ''
+    defaultValue: 'Technology'
   },
 })
 

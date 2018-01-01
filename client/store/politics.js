@@ -18,6 +18,7 @@ export default function reducer ( polSources = [], action) {
   }
 
   export const fetchPolitics = () => dispatch => {
+ 
     axios.get('/api/politics')
          .then(res => dispatch(initPol(res.data)));
   };

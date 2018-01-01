@@ -20,12 +20,39 @@ form div {
   display: inline-block;
 }
 
+#hello {
+  padding: 0;
+}
+/* .col.s2 {
+  background-color: grey;
+  position: fixed;
+} */
+
+
 #sidebar {
-  /* background-color: grey; */
+  background-color:grey;
   height: 100vh;
 }
+/* #sidebar { */
+  /* background-color: grey; */
+  /* height: 100vh;
 
+  position: fixed;
+} */
 
+#toRight {
+  float: right;
+}
+.dropSpace{
+  height : 10vh;
+}
+button {
+  width: 15vw;
+}
+
+li {
+  text-align: center;
+}
 /* #category {
   background-color: green;
   height: 14.25vh;

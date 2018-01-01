@@ -1,6 +1,10 @@
 
 const User = require('./user')
 const Politics = require('./politics')
+const Entertainment = require('./entertainment')
+const Sports = require('./sports')
+const Technology = require('./technology')
+const Financial = require('./financial')
 const SourcesSelected = require('./sourcesSelected')
 
 
@@ -22,5 +26,9 @@ SourcesSelected.belongsTo(User)
 module.exports = {
   User,
   Politics,
-  SourcesSelected
+  SourcesSelected, 
+  Entertainment,
+  Sports,
+  Financial,
+  Technology,
 }

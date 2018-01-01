@@ -18,15 +18,15 @@ const Main = (props) => {
       <nav>
         {
           isLoggedIn
-            ? <div className="nav-wrapper grey">
+            ? <div id = "navbar" className="nav-wrapper grey">
              
-              <ul id="nav-mobile" className="right hide-on-med-and-down">
+              <ul id="nav-mobile" className="left hide-on-med-and-down">
               <li><Link to="/home">Home</Link></li>
               <li><a href="#" onClick={handleClick}>Logout</a></li>
               </ul>
               <p> Welcome, {email} </p>
             </div>
-            : <div className="nav-wrapper grey">
+            : <div  id = "navbar" className="nav-wrapper grey">
                <ul id="nav-mobile" className="left hide-on-med-and-down">
               <li> <Link to="/login">Login</Link></li>
              <li> <Link to="/signup">Sign Up</Link></li>
