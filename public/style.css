@@ -1,5 +1,13 @@
 body {
   font-family: sans-serif;
+  padding:0;
+  margin:0;
+
+  
+}
+main {
+  flex: 1 0 auto;
+
 }
 
 a {
@@ -20,19 +28,77 @@ form div {
   display: inline-block;
 }
 
-#hello {
-  padding: 0;
+.logo{
+  height: 70px;
+  padding-top: 5px;
+  padding-bottom: 4px;
+ 
+}
+.imgCard{
+  height: 242.63px;
+  width: 400.88px;
+
 }
 /* .col.s2 {
   background-color: grey;
   position: fixed;
 } */
-
-
-#sidebar {
-  background-color:grey;
-  height: 100vh;
+.venNews {
+  padding-top: 7px;
+  padding-left: 5px;
+  color: blanchedalmond
+  font-weight: 600;
 }
+.handle{
+  padding-left: 1000px;
+}
+.sideHold{
+  background-color: blue;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 12px;
+  padding-left:12px;
+  border-radius:15px;
+  background-color: #7d1a2b;
+  background-image: url("https://www.transparenttextures.com/patterns/dust.png");
+  margin-left: 75px;
+  margin-top: 50px;
+}
+
+nav{
+  background-color: #7d1a2b;
+  background-image: url("https://www.transparenttextures.com/patterns/dust.png");
+  /* background-color: #594f4f;
+  background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png"); */
+  height: 9vh;
+}
+.fixed{
+  position: fixed;
+
+}
+
+p{
+  margin:0;
+}
+
+.listItemPic{
+  display:block;
+  margin: auto;
+  height: 4em;
+  padding-top: 5px;
+}
+
+.listItemName{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* 
+#fix {
+  position: fixed;
+  background-color: grey
+} */
 /* #sidebar { */
   /* background-color: grey; */
   /* height: 100vh;
@@ -40,14 +106,16 @@ form div {
   position: fixed;
 } */
 
-#toRight {
-  float: right;
+.dropSpaceTop{
+  height : 5vh;
 }
+
 .dropSpace{
-  height : 10vh;
+  height : 5vh;
 }
 button {
-  width: 15vw;
+  width: 13vw;
+  
 }
 
 li {
@@ -57,3 +125,36 @@ li {
   background-color: green;
   height: 14.25vh;
 } */
+
+.bodColor {
+  background-color: #756868;
+  background-image: url("https://www.transparenttextures.com/patterns/paper-1.png");
+  margin: 0;
+}
+/* div.row{
+  margin: 0
+} */
+
+.footer{
+  height:5vh;
+  position: fixed;
+
+}
+
+#loginPage {
+  background-color: #756868;
+  background-image: url("https://www.transparenttextures.com/patterns/paper-1.png");
+}
+
+.sideColor{
+  background-color: blue;
+}
+
+#borderLi {
+  border-color: black;
+  border-width: 10px;
+}
+
+.footRow {
+  margin: 0;
+}
