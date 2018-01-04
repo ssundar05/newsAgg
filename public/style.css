@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   padding:0;
   margin:0;
 
@@ -23,10 +23,10 @@ nav a {
   margin: 1em;
 } */
 
-form div {
+/* form div {
   margin: 1em;
   display: inline-block;
-}
+} */
 
 .logo{
   height: 70px;
@@ -43,10 +43,16 @@ form div {
   background-color: grey;
   position: fixed;
 } */
+#fullDiv{
+  height:100vh;
+  width:100vw;
+  background-color: #756868;
+  background-image: url("https://www.transparenttextures.com/patterns/paper-1.png");
+}
 .venNews {
   padding-top: 7px;
   padding-left: 5px;
-  color: blanchedalmond
+  color: blanchedalmond;
   font-weight: 600;
 }
 .handle{
@@ -64,6 +70,7 @@ form div {
   margin-left: 75px;
   margin-top: 50px;
 }
+
 
 nav{
   background-color: #7d1a2b;
@@ -158,3 +165,53 @@ li {
 .footRow {
   margin: 0;
 }
+
+
+.login-form-container {
+  display: table;
+   position: absolute;
+   height: 100%;
+   width: 100%;
+}
+.cCont {
+  display: table-cell;
+   vertical-align: middle;
+}
+.cCard {
+  min-height: 500px;
+  width: 400px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cHead{
+  height: 80px;
+  line-height: 80px;
+  background-color: #7d1a2b;
+  background-image: url("https://www.transparenttextures.com/patterns/dust.png");
+}
+.cHead p {
+  margin: 0;
+  text-transform: uppercase;
+  color: #fff;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+
+.ccCont{
+  margin-top: 10px;
+}
+.ccCont label {
+  font-size: 18px;
+  color:#333;
+}
+.card-footer {
+  margin-top: 20px;
+}
+.card-footer label {
+  font-size: 14px !important;
+  cursor: pointer;
+}
+
