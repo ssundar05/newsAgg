@@ -17,9 +17,9 @@ const AuthForm = (props) => {
       <div id="fullDiv">
         <section className="login-form-container">
           <div className="card-container cCont">
-            <div className="card cCard">
+            <div className="card cCard z-depth-5">
               <div className="card-header cHead">
-                <p>{displayName} Here</p>
+                <p id= "loginTitle">{displayName} Here</p>
                 {/* <a className="btn-floating btn-large waves-effect waves-light tooltipped" data-position="right" data-delay="50" data-tooltip="Register"><i className="material-icons">person_add</i></a> */}
               </div>
               <div className="card-content ccCont">
@@ -28,7 +28,7 @@ const AuthForm = (props) => {
                     <div className="input-field col l12 m12 s12">
                       <i className="material-icons prefix">account_circle</i>
                       <input placeholder="" id="email" type="text" className="validate" required="required" />
-                        <label htmlFor="email">Enter Username</label>
+                        <label htmlFor="email">Enter e-mail</label>
                        </div>
                     </div>
                     <div className="row">

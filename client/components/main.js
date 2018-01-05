@@ -27,10 +27,10 @@ const Main = (props) => {
        </div>
                 
                 <ul className="right hide-on-med-and-down">
-                  <li><Link to="/home">About</Link></li>
-                  <li><a href="#" onClick={handleClick}>Logout</a></li>
+                  <li >< Link to="/home" id = "navLi">About</Link></li>
+                  <li ><a href="#"  id = "navLi" onClick={handleClick}>Logout</a></li>
                 </ul>
-                <p className = 'center handle'> Welcome, {email} </p>
+                <p className = 'center handle' id = "navLi"> Welcome, {email} </p>
               </div>
             </nav>
           </div>
@@ -55,8 +55,8 @@ const Main = (props) => {
        </div>
                 
                 <ul className="right hide-on-med-and-down">
-                  <li><Link to="/login">Login</Link></li>
-                  <li><Link to="/signup">Sign Up</Link></li>
+                  <li><Link to="/login" id = "navLi" >Login</Link></li>
+                  <li><Link to="/signup" id = "navLi">Sign Up</Link></li>
                 </ul>
               </div>
             </nav>
