@@ -24,36 +24,22 @@ const Main = (props) => {
               <div className="nav-wrapper">
                 <div>
                 <a className="brand-logo left"><img className = "logo" src = "https://image.flaticon.com/icons/svg/227/227035.svg" /><span className = "venNews right">VENNEWS</span></a>
-       </div>
-                
+               </div>      
                 <ul className="right hide-on-med-and-down">
-                  <li >< Link to="/home" id = "navLi">About</Link></li>
+                  {/* <li >< Link to="/home" id = "navLi">About</Link></li> */}
                   <li ><a href="#"  id = "navLi" onClick={handleClick}>Logout</a></li>
                 </ul>
                 <p className = 'center handle' id = "navLi"> Welcome, {email} </p>
               </div>
             </nav>
           </div>
-            
-            // <div id = "navbar-fixed" className="nav-wrapper grey">
-            
-                
-             
-            //   <ul id="nav-mobile" className="left hide-on-med-and-down">
-            //   <li><Link to="/home">Home</Link></li>
-            //   <li><a href="#" onClick={handleClick}>Logout</a></li>
-            //   </ul>
-            //   <p> Welcome, {email} </p>
-              
-            // </div>
             : 
             <div className="navbar-fixed">
             <nav>
               <div className="nav-wrapper">
               <div>
                 <a className="brand-logo left"><img className = "logo" src = "https://image.flaticon.com/icons/svg/227/227035.svg" /><span className = "venNews right">VENNEWS</span></a>
-       </div>
-                
+              </div>
                 <ul className="right hide-on-med-and-down">
                   <li><Link to="/login" id = "navLi" >Login</Link></li>
                   <li><Link to="/signup" id = "navLi">Sign Up</Link></li>
@@ -61,17 +47,8 @@ const Main = (props) => {
               </div>
             </nav>
           </div>
-            
-            
-            // <div  id = "navbar" className="nav-wrapper grey">
-            //    <ul id="nav-mobile" className="left hide-on-med-and-down">
-            //   <li> <Link to="/login">Login</Link></li>
-            //  <li> <Link to="/signup">Sign Up</Link></li>
-            //  </ul>
-            // </div>
         }
       </nav>
-      
       {children}
     </div>
   )

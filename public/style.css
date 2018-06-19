@@ -2,12 +2,10 @@ body {
   font-family: 'Roboto Condensed', 'garamond';
   padding:0;
   margin:0;
-
-  
 }
+
 main {
   flex: 1 0 auto;
-
 }
 
 a {
@@ -17,44 +15,32 @@ a {
 label {
   display: block;
 }
-/* 
-nav a {
-  display: inline-block;
-  margin: 1em;
-} */
-
-/* form div {
-  margin: 1em;
-  display: inline-block;
-} */
 
 .logo{
   height: 70px;
   padding-top: 5px;
   padding-bottom: 4px;
- 
 }
+
 .imgCard{
   height: 242.63px;
   width: 400.88px;
-
 }
-/* .col.s2 {
-  background-color: grey;
-  position: fixed;
-} */
+
 #fullDiv{
   height:100vh;
   width:100vw;
   background-color: #756868;
   background-image: url("https://www.transparenttextures.com/patterns/paper-1.png");
 }
+
 .venNews {
   padding-top: 7px;
   padding-left: 5px;
   color: blanchedalmond;
   font-weight: 600;
 }
+
 #navLi{
   color: blanchedalmond;
   font-size: 17px;
@@ -67,7 +53,6 @@ nav a {
   padding-top: 2px;
   font-size: 20px;
   font-weight: 500;
-
 }
 
 .handle{
@@ -86,17 +71,14 @@ nav a {
   margin-top: 50px;
 }
 
-
 nav{
   background-color: #7d1a2b;
   background-image: url("https://www.transparenttextures.com/patterns/dust.png");
-  /* background-color: #594f4f;
-  background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png"); */
   height: 9vh;
 }
+
 .fixed{
   position: fixed;
-
 }
 
 p{
@@ -116,18 +98,6 @@ p{
   font-weight: 500;
 }
 
-/* 
-#fix {
-  position: fixed;
-  background-color: grey
-} */
-/* #sidebar { */
-  /* background-color: grey; */
-  /* height: 100vh;
-
-  position: fixed;
-} */
-
 .dropSpaceTop{
   height : 5vh;
 }
@@ -135,32 +105,24 @@ p{
 .dropSpace{
   height : 5vh;
 }
+
 button {
-  width: 13vw;
-  
+  width: 13vw;  
 }
 
 li {
   text-align: center;
 }
-/* #category {
-  background-color: green;
-  height: 14.25vh;
-} */
 
 .bodColor {
   background-color: #756868;
   background-image: url("https://www.transparenttextures.com/patterns/paper-1.png");
   margin: 0;
 }
-/* div.row{
-  margin: 0
-} */
 
 .footer{
   height:5vh;
   position: fixed;
-
 }
 
 #loginPage {
@@ -199,6 +161,7 @@ li {
   display: table-cell;
    vertical-align: middle;
 }
+
 .cCard {
   min-height: 500px;
   width: 400px;
@@ -220,7 +183,6 @@ li {
   margin-left: 20px;
   font-size: 18px;
 }
-
 
 .ccCont{
   margin-top: 10px;

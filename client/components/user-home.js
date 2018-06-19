@@ -5,11 +5,6 @@ import { findSelectedSources, setPolitics, setSports, setFinancial, setTechnolog
 import { Button, NavItem, Dropdown } from 'react-materialize'
 import axios from 'axios'
 
-// api key dbf782ddda0147a287a8f3e9e579e1a4
-// https://newsapi.org/v2/top-headlines -G \
-// -d sources=bbc-news \
-// -d apiKey=dbf782ddda0147a287a8f3e9e579e1a4
-
 class UserHome extends React.Component {
   constructor(props) {
     super(props);
@@ -45,15 +40,11 @@ class UserHome extends React.Component {
     this.handleEntertainmentClick = this.handleEntertainmentClick.bind(this)
   }
 
-
   componentDidMount() {
-
     this.props.selectedSources(this.props.email)
-
-
   }
-  componentDidUpdate(prevProps, prevState) {
 
+  componentDidUpdate(prevProps, prevState) {
     if (prevProps.sources !== this.props.sources) {
       if (this.props.sources.politics !== 'Politics' && this.state.currentClick === '') {
         axios.get(`https://newsapi.org/v2/top-headlines/?${this.props.sources.politics.source}&${this.state.apiKey}`).then(head => {
@@ -165,69 +156,54 @@ class UserHome extends React.Component {
       <div>
         <div className="row bodColor" >
           <div className="col s2">
-
             <div className='fixed ' id="sidebar">
               <div className='dropSpaceTop'> </div>
-              <div className = "sideHold z-depth-5">
-              <Dropdown trigger={
-                <Button className="blue-grey darken-1 z-depth-5" >Politics</Button>
-              }>
-                {this.props.politicsSources.map(item => {
-                  return <li className="grey lighten-2" onClick={this.handlePolClick} key={item.id} data-name={item.name} >
-                    < img className='listItemPic' data-name={item.name} name={item.name} src={item.imgUrl} /> <p data-name={item.name} className="listItemName"> {item.name} </p>
-                  </li>
-                })}
-              </Dropdown>
-              <div className='dropSpace'> </div>
-              <Dropdown trigger={
-                <Button className="blue-grey darken-1 z-depth-5">Sports</Button>
-              }>
-                {this.props.sportsSources.map(item => {
-                  return <li className="grey lighten-2" onClick={this.handleSportsClick} key={item.id} data-name={item.name} >
-                    < img className='listItemPic' data-name={item.name} name={item.name} src={item.imgUrl} /> <p data-name={item.name} className="listItemName"> {item.name} </p>
-                  </li>
-                })}
-              </Dropdown>
-              <div className='dropSpace'> </div>
-              <Dropdown trigger={
-                <Button className="blue-grey darken-1 z-depth-5">Technology</Button>
-              }>
-                {this.props.technologySources.map(item => {
-                  return <li className="grey lighten-2" onClick={this.handleTechnologyClick} key={item.id} data-name={item.name} >
-                    < img className='listItemPic' data-name={item.name} name={item.name} src={item.imgUrl} /> <p data-name={item.name} className="listItemName"> {item.name} </p>
-                  </li>
-                })}
-              </Dropdown>
-              <div className='dropSpace'> </div>
-              <Dropdown trigger={
-                <Button className="blue-grey darken-1 z-depth-5">Financial</Button>
-              }>
-                {this.props.financialSources.map(item => {
-                  return <li className="grey lighten-2 z-depth-5" onClick={this.handleFinancialClick} key={item.id} data-name={item.name} >
-                    < img className='listItemPic' data-name={item.name} name={item.name} src={item.imgUrl} /> <p data-name={item.name} className="listItemName"> {item.name} </p>
-                  </li>
-                })}
-              </Dropdown>
-              <div className='dropSpace'> </div>
-              <Dropdown trigger={
-                <Button className="blue-grey darken-1 z-depth-5"> Entertainment</Button>
-              }>
-                {this.props.entertainmentSources.map(item => {
-                  return <li className="grey lighten-2" onClick={this.handleEntertainmentClick} key={item.id} data-name={item.name} >
-                    < img className='listItemPic' data-name={item.name} name={item.name} src={item.imgUrl} /> <p data-name={item.name} className="listItemName"> {item.name} </p>
-                  </li>
-                })}
-              </Dropdown>
+              <div className="sideHold z-depth-5">
+                <Dropdown trigger={<Button className="blue-grey darken-1 z-depth-5" >Politics</Button>}>
+                  {this.props.politicsSources.map(item => {
+                    return <li className="grey lighten-2" onClick={this.handlePolClick} key={item.id} data-name={item.name} >
+                      < img className='listItemPic' data-name={item.name} name={item.name} src={item.imgUrl} /> <p data-name={item.name} className="listItemName"> {item.name} </p>
+                    </li>
+                  })}
+                </Dropdown>
+                <div className='dropSpace'> </div>
+                <Dropdown trigger={
+                  <Button className="blue-grey darken-1 z-depth-5">Sports</Button>}>
+                  {this.props.sportsSources.map(item => {
+                    return <li className="grey lighten-2" onClick={this.handleSportsClick} key={item.id} data-name={item.name} >
+                      < img className='listItemPic' data-name={item.name} name={item.name} src={item.imgUrl} /> <p data-name={item.name} className="listItemName"> {item.name} </p>
+                    </li>
+                  })}
+                </Dropdown> <div className='dropSpace'> </div>
+                <Dropdown trigger={<Button className="blue-grey darken-1 z-depth-5">Technology</Button>}>
+                  {this.props.technologySources.map(item => {
+                    return <li className="grey lighten-2" onClick={this.handleTechnologyClick} key={item.id} data-name={item.name} >
+                      < img className='listItemPic' data-name={item.name} name={item.name} src={item.imgUrl} /> <p data-name={item.name} className="listItemName"> {item.name} </p>
+                    </li>
+                  })}
+                </Dropdown>
+                <div className='dropSpace'> </div>
+                <Dropdown trigger={ <Button className="blue-grey darken-1 z-depth-5">Financial</Button>}>
+                  {this.props.financialSources.map(item => {
+                    return <li className="grey lighten-2 z-depth-5" onClick={this.handleFinancialClick} key={item.id} data-name={item.name} >
+                      < img className='listItemPic' data-name={item.name} name={item.name} src={item.imgUrl} /> <p data-name={item.name} className="listItemName"> {item.name} </p>
+                    </li>
+                  })}
+                </Dropdown><div className='dropSpace'> </div>
+                <Dropdown trigger={<Button className="blue-grey darken-1 z-depth-5"> Entertainment</Button>}>
+                  {this.props.entertainmentSources.map(item => {
+                    return <li className="grey lighten-2" onClick={this.handleEntertainmentClick} key={item.id} data-name={item.name} >
+                      < img className='listItemPic' data-name={item.name} name={item.name} src={item.imgUrl} /> <p data-name={item.name} className="listItemName"> {item.name} </p>
+                    </li>
+                  })}
+                </Dropdown>
               </div>
             </div>
-
           </div>
-
           <div className="col s10 scrollit" >
             <div className="container">
               <div className="row">
                 <div className="col s6">
-
                   <div className="card">
                     <div className="card-image waves-effect waves-block waves-light">
                       <img className="activator imgCard" src="https://2.bp.blogspot.com/-xCo_rqv8MFo/T-D6y1gjPfI/AAAAAAAAAz0/gBKoQzXihLQ/s1600/81576-democrat_republican_by.jpg" />
@@ -243,12 +219,9 @@ class UserHome extends React.Component {
                           return <a target="_blank" href={story.url} className="collection-item  grey-text text-darken-4" key={index} > {story.title} </a>
                         })}
                       </div>
-
                     </div>
                   </div>
-
                 </div>
-
                 <div className="col s6">
                   <div className="card">
                     <div className="card-image waves-effect waves-block waves-light">
@@ -271,7 +244,6 @@ class UserHome extends React.Component {
               </div>
               <div className="row">
                 <div className="col s6">
-
                   <div className="card">
                     <div className="card-image waves-effect waves-block waves-light">
                       <img className="activator imgCard" src="http://media.culturemap.com/crop/a3/a1/633x475/Technology-image_112831.jpg" />
@@ -287,12 +259,9 @@ class UserHome extends React.Component {
                           return <a target="_blank" href={story.url} className="collection-item grey-text text-darken-4" key={index} > {story.title} </a>
                         })}
                       </div>
-
                     </div>
                   </div>
-
                 </div>
-
                 <div className="col s6">
                   <div className="card">
                     <div className="card-image waves-effect waves-block waves-light">
@@ -317,7 +286,6 @@ class UserHome extends React.Component {
                 <div className="col s3">
                 </div>
                 <div className="col s6">
-
                   <div className="card">
                     <div className="card-image waves-effect waves-block waves-light">
                       <img className="activator imgCard" src="http://ww3.hdnux.com/photos/13/55/35/3069806/3/core_multimedia_package.jpg" />
@@ -341,18 +309,13 @@ class UserHome extends React.Component {
               </div>
             </div>
           </div>
-
         </div>
         <footer className="fixed">
           <p> ddd </p>
         </footer>
       </div>
-
-
     )
-
   }
-
 }
 const mapState = (state) => {
   return {
