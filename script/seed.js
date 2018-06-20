@@ -1,14 +1,4 @@
-/**
- * Welcome to the seed file! This seed file uses a newer language feature called...
- *
- *                  -=-= ASYNC...AWAIT -=-=
- *
- * Async-await is a joy to use! Read more about it in the MDN docs:
- *
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
- *
- * Now that you've got the main idea, check it out in practice below!
- */
+
 const db = require('../server/db')
 const {User, Politics, Technology, Sports, Financial, Entertainment} = require('../server/db/models')
 
@@ -25,38 +15,38 @@ async function seed (){
 
 
   const politics = await Promise.all([
-    Politics.create({name: 'Breitbart', imgUrl: 'https://icons.better-idea.org/icon?url=http://www.breitbart.com&size=35..60..100', source: 'sources=breitbart-news'}),
-    Politics.create({name: 'Politico', imgUrl: 'https://icons.better-idea.org/icon?url=https://www.politico.com&size=35..60..100', source: 'sources=politico'}),
-    Politics.create({name: 'The Hill', imgUrl: 'https://icons.better-idea.org/icon?url=http://thehill.com&size=35..60..100', source: 'sources=the-hill'}),
-    Politics.create({name: 'La Nacion', imgUrl: 'https://icons.better-idea.org/icon?url=http://www.lanacion.com.ar&size=35..60..100', source: 'sources=la-nacion'}),
+    Politics.create({name: 'Breitbart', imgUrl: 'http://www.breitbart.com/t/assets/icons/apple-touch-icon-152x152.png', source: 'sources=breitbart-news'}),
+    Politics.create({name: 'Politico', imgUrl: 'https://static.politico.com/dims4/default/bd69088/2147483647/legacy_thumbnail/144x144/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2Fcf%2F05%2Fee684a274496b04fa20ba2978da1%2Fpolitico.png', source: 'sources=politico'}),
+    Politics.create({name: 'The Hill', imgUrl: 'https://icon-locator.herokuapp.com/lettericons/T-120-0250a5.png', source: 'sources=the-hill'}),
+    Politics.create({name: 'La Nacion', imgUrl: 'https://www.lanacion.com.ar/apple-touch-icon.png', source: 'sources=la-nacion'}),
   ])
 
   const technology = await Promise.all([
-    Technology.create({name: 'TechCrunch', imgUrl: 'https://icons.better-idea.org/icon?url=https://techcrunch.com&size=35..60..100', source: 'sources=techcrunch'}),
-    Technology.create({name: 'Wired', imgUrl: 'https://icons.better-idea.org/icon?url=https://www.wired.com&size=35..60..100', source: 'sources=wired'}),
-    Technology.create({name: 'Hacker News', imgUrl: 'https://icons.better-idea.org/icon?url=https://news.ycombinator.com&size=35..60..100', source: 'sources=hacker-news'}),
-    Technology.create({name: 'Recode', imgUrl: 'https://icons.better-idea.org/icon?url=http://www.recode.net&size=35..60..100', source: 'sources=recode'}),
+    Technology.create({name: 'TechCrunch', imgUrl: 'https://icon-locator.herokuapp.com/icon?url=https://techcrunch.com&size=70..120..200', source: 'sources=techcrunch'}),
+    Technology.create({name: 'Wired', imgUrl: 'https://www.wired.com/apple-touch-icon.png', source: 'sources=wired'}),
+    Technology.create({name: 'Hacker News', imgUrl: 'https://icon-locator.herokuapp.com/lettericons/Y-120-ff6600.png', source: 'sources=hacker-news'}),
+    Technology.create({name: 'Recode', imgUrl: 'https://cdn.vox-cdn.com/uploads/chorus_asset/file/6397047/recode_favicon-180.0.png', source: 'sources=recode'}),
   ])
 
   const sports = await Promise.all([
-    Sports.create({name: 'ESPN', imgUrl: 'https://icons.better-idea.org/icon?url=http://espn.go.com&size=35..60..100', source: 'sources=espn'}),
-    Sports.create({name: 'Bleacher Report', imgUrl: 'https://icons.better-idea.org/icon?url=http://www.bleacherreport.com&size=35..60..100', source: 'sources=bleacher-report'}),
-    Sports.create({name: 'NFL News', imgUrl: 'https://icons.better-idea.org/icon?url=http://www.nfl.com/news&size=35..60..100', source: 'sources=nfl-news'}),
-    Sports.create({name: 'NHL News', imgUrl: 'https://icons.better-idea.org/icon?url=https://www.nhl.com/news&size=35..60..100', source: 'sources=nhl-news'}),
+    Sports.create({name: 'ESPN', imgUrl: 'http://a.espncdn.com/wireless/mw5/r1/images/bookmark-icons-v2/espn-icon-120x120.png', source: 'sources=espn'}),
+    Sports.create({name: 'Bleacher Report', imgUrl: 'http://www.bleacherreport.com/img/favicon/appleTouchIcon.png', source: 'sources=bleacher-report'}),
+    Sports.create({name: 'NFL News', imgUrl: 'https://www.nfl.com/apple-touch-icon.png?akmobile=ios&akcarrier=other', source: 'sources=nfl-news'}),
+    Sports.create({name: 'NHL News', imgUrl: 'https://www-league.nhlstatic.com/nhl.com/builds/site-core/4d0786eee584834bdb060edd309c00b34567885e_1529084610/images/iOS/apple-icon-144x144.png', source: 'sources=nhl-news'}),
   ])
 
   const financial = await Promise.all([
-    Financial.create({name: 'Bloomberg', imgUrl: 'https://icons.better-idea.org/icon?url=http://www.bloomberg.com&size=35..60..100', source: 'sources=bloomberg'}),
-    Financial.create({name: 'Financial Post', imgUrl: 'https://icons.better-idea.org/icon?url=http://business.financialpost.com&size=35..60..100', source: 'sources=financial-post'}),
-    Financial.create({name: 'The Economist', imgUrl: 'https://icons.better-idea.org/icon?url=http://www.economist.com&size=35..60..100', source: 'sources=the-economist'}),
-    Financial.create({name: 'The Wall Street Journal', imgUrl: 'https://icons.better-idea.org/icon?url=http://www.wsj.com&size=35..60..100', source: 'sources=the-wall-street-journal'}),
+    Financial.create({name: 'Bloomberg', imgUrl: 'https://assets.bwbx.io/s3/javelin/public/hub/images/apple-touch-icon-120x120-ef3226f2bd.png', source: 'sources=bloomberg'}),
+    Financial.create({name: 'Financial Post', imgUrl: 'http://1.gravatar.com/blavatar/b4ece3189893389a03f063830eacd95c?s=114', source: 'sources=financial-post'}),
+    Financial.create({name: 'The Economist', imgUrl: 'http://www.economist.com/assets/apple-touch-icon.png', source: 'sources=the-economist'}),
+    Financial.create({name: 'The Wall Street Journal', imgUrl: 'https://s.wsj.net/media/wsj_apple-touch-icon-120x120.png', source: 'sources=the-wall-street-journal'}),
   ])
 
   const entertainment = await Promise.all([
-    Entertainment.create({name: 'Buzzfeed', imgUrl: 'https://icons.better-idea.org/icon?url=https://www.buzzfeed.com&size=35..60..100', source: 'sources=buzzfeed'}),
-    Entertainment.create({name: 'Daily Mail', imgUrl: 'https://icons.better-idea.org/icon?url=http://www.dailymail.co.uk/home/index.html&size=35..60..100', source: 'sources=daily-mail'}),
-    Entertainment.create({name: 'Mashable', imgUrl: 'https://icons.better-idea.org/icon?url=http://mashable.com&size=35..60..100', source: 'sources=mashable'}),
-    Entertainment.create({name: 'The Lad Bible', imgUrl: 'https://icons.better-idea.org/icon?url=http://www.theladbible.com&size=35..60..100', source: 'sources=the-lad-bible'}),
+    Entertainment.create({name: 'Buzzfeed', imgUrl: 'https://www.buzzfeed.com/static-assets/img/touch-icon-ios_120.208a0e329cd6e8d831b21ae17fb6aabb.png', source: 'sources=buzzfeed'}),
+    Entertainment.create({name: 'Daily Mail', imgUrl: 'http://www.dailymail.co.uk/apple-touch-icon.png', source: 'sources=daily-mail'}),
+    Entertainment.create({name: 'Mashable', imgUrl: 'https://mashable.com/apple-touch-icon-120x120.png?v=m2Pmw8zNwl', source: 'sources=mashable'}),
+    Entertainment.create({name: 'The Lad Bible', imgUrl: 'http://www.ladbible.com/assets/images/theme/favicons/apple-touch-icon-120x120.png', source: 'sources=the-lad-bible'}),
   ])
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!
